@@ -1,0 +1,299 @@
+/* --- Variables de Diseño (Sistema de Diseño) --- */
+:root {
+    --azul-oscuro: #003366;      /* Color corporativo serio */
+    --azul-primario: #0056b3;    /* Color botones principales */
+    --azul-claro: #eef4fb;       /* Fondos suaves */
+    --acento: #ff914d;           /* Naranja suave para llamadas a la acción (contraste) */
+    --texto-principal: #333333;
+    --texto-suave: #555555;
+    --blanco: #ffffff;
+    --sombra-suave: 0 4px 20px rgba(0, 50, 100, 0.08);
+}
+
+/* --- Base --- */
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: var(--texto-principal);
+    margin: 0;
+    line-height: 1.7; /* Mayor espacio entre lineas para leer mejor */
+    font-size: 18px;  /* Letra base grande para adultos mayores */
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--azul-oscuro);
+    font-weight: 700;
+}
+
+/* --- Header y Navegación --- */
+header {
+    background-color: var(--blanco);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0.8rem 0;
+}
+
+.container-nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--texto-suave);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover { color: var(--azul-primario); }
+
+/* Botón especial del menú */
+.btn-nav {
+    background-color: var(--azul-primario);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 50px; /* Bordes redondos modernos */
+    font-size: 0.95rem;
+}
+
+.btn-nav:hover { background-color: var(--azul-oscuro); }
+
+/* --- Sección Hero (Portada) --- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    gap: 50px;
+}
+
+.hero-content { flex: 1; }
+
+.etiqueta-medica {
+    background-color: var(--azul-claro);
+    color: var(--azul-primario);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--texto-suave);
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background-color: var(--azul-primario);
+    color: white;
+    padding: 18px 35px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--azul-oscuro);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 2px solid var(--azul-primario);
+    color: var(--azul-primario);
+    padding: 16px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+    background-color: var(--azul-claro);
+}
+
+/* Imagen Hero con forma decorativa */
+.hero-image {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.foto-profesional {
+    width: 350px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 20px 20px 0 var(--azul-claro); /* Efecto de marco desplazado */
+}
+
+/* --- Sección Pasos (Cards) --- */
+.seccion-pasos {
+    background-color: #f9fcff;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.subtitulo-seccion {
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+    font-size: 1.2rem;
+}
+
+.grid-pasos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.tarjeta-paso {
+    background: white;
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: var(--sombra-suave);
+    transition: transform 0.3s;
+}
+
+.tarjeta-paso:hover { transform: translateY(-5px); }
+
+.icono-paso {
+    font-size: 2.5rem;
+    color: var(--azul-primario);
+    margin-bottom: 20px;
+}
+
+/* --- Sección Sobre Mí --- */
+.seccion-blanca { padding: 100px 20px; }
+
+.resaltado {
+    font-size: 1.4rem;
+    color: var(--azul-primario);
+    font-style: italic;
+    font-weight: 600;
+    border-left: 4px solid var(--acento);
+    padding-left: 20px;
+    margin: 30px 0;
+}
+
+.lista-especialidades {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.lista-especialidades li {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.lista-especialidades i { color: var(--acento); }
+
+/* --- Footer --- */
+footer {
+    background-color: var(--azul-oscuro);
+    color: white;
+    padding: 60px 20px 20px;
+}
+
+.container-footer {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 40px;
+}
+
+.matricula {
+    opacity: 0.7;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.links-footer a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.links-footer a:hover { opacity: 1; text-decoration: underline; }
+
+.copyright {
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.6;
+    margin-top: 20px;
+}
+
+/* --- Responsive (Celulares) --- */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse; /* Foto arriba, texto abajo en móviles */
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .hero h1 { font-size: 2.2rem; }
+    
+    .hero-buttons { justify-content: center; }
+
+    .foto-profesional { width: 280px; height: 320px; }
+
+    nav { display: none; } /* En una versión V3 podemos hacer menú hamburguesa */
+    
+    /* Mantenemos solo el logo centrado en móvil para simplicidad */
+    .container-nav { justify-content: center; }
+}
